@@ -1,134 +1,59 @@
-
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-
+import React from 'react'
+import Navbar from './Navbar';
+import Footer from './Footer';
+import { Link } from 'react-router-dom';
 import './Login.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Login = () => {
-
-
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const [tokenExists, setTokenExists] = useState(false);
-
-
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const checkToken = async () => {
-      const token = localStorage.getItem('Admin_token');
-      if (token) {
-        setTokenExists(true);
-      }
-    };
-
-    checkToken();
-  }, []);
-
-
-
-  const handleLogin = async (e) => {
-    e.preventDefault();
-
-    try {
-  
-      const response = await axios.post(`${process.env.REACT_APP_API_HOST}/login`, {
-        username,
-        password,
-      });
-   
-
-          if (!response.data.success) {
-            setError(response.data.message);
-          } else {
- 
-            const { token } = response.data;
-       
-            localStorage.setItem('User_token', token);
-
-            setTokenExists(true);
-           
-            navigate('/');      
-
-          }
-  
-    } catch (error) {    
-      setError(error.response.data.message);
-      //setError('An error occurred while logging in.');
-    }
-  };
-
-  // Redirect if token exists
-  useEffect(() => {
-    if (tokenExists) {
-      navigate('/');
-    }
-  }, [tokenExists, navigate]);
-
-
-
+function Login() {
   return (
-      <section id="login-page" className="login-page">
-          <div className="container-fluid">
-              <div className="row w-100 mx-0">
-                  <div className="col-lg-4 mx-auto">
-                      {/* Left empty for spacing */}
+    <div className='home'>
+        <Navbar/>
+          
+            <main id="main" className="sticked-header-offset">
+              <section id="login" className="login">
+                <div className="container" data-aos="fade-up">
+                  <div className="section-header">
+                    <i className="bi bi-person-badge flex-shrink-0" />
+                    <h2>Professional Profile</h2>
+                    <p>Login With</p>
                   </div>
-
-                  <div className="col-lg-4 mx-auto">
-                      <div className="auth-form-light text-left py-4 px-3 px-sm-4">
-                          <div className="brand-logo">
-                              <a href="index.html"> 
-                                  <img alt="image" src="https://cyberimpulses.com/Android/BoatAdmin/images/logo-text.png" className="header-logo" style={{ width: '50%' }} />
-                              </a>
+                  <div className="row gx-lg-0 gy-4">
+                    <div className="col-lg-3" />
+                    <div className="col-lg-6">
+                      <form className="php-email-form1">
+                        <div className="row">
+                          <div className="col-md-12 form-group mt-3 mt-md-0">
+                            <label>Email ID</label>
+                            <input type="email" className="form-control" name="email" id="email" placeholder="Enter your username" required />
                           </div>
-                          <h4 className="login-title">Professional Profile</h4>
-                          {error && <p style={{ color: 'red' }}>{error}</p>}
-                          <form onSubmit={handleLogin} className="pt-3">
-                              <div className="form-group">
-                                  <label>Username</label>
-                                  <input type="text" className="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username" value={username}
-          onChange={(e) => setUsername(e.target.value)} />
-                              </div>
-                              <div className="form-group">
-                                  <label>Password</label>
-                                  <input type="password" className="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password"  value={password}
-          onChange={(e) => setPassword(e.target.value)} />
-                              </div>
-
-                              <div className="my-3 d-flex justify-content-between align-items-center">
-                                  <div className="form-check">
-                                      <label className="form-check-label text-muted">
-                                          <input type="checkbox" className="form-check-input" />
-                                          Keep me signed in
-                                      </label>
-                                  </div>
-                                  <a href="#" className="auth-link text-black">Forgot password?</a>
-                              </div>
-                              <div className="mt-3">
-                                  {/* <a className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="index.html">SIGN IN</a> */}
-                                  <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit">SIGN IN</button>
-                              </div>
-                              <div className="text-center mt-3 font-weight-bold">
-                                  Don't have an account? <a href="#">Create</a>
-                              </div>
-                          </form>
-                      </div>
+                        </div>
+                        <div className="form-group mt-3">
+                          <label>Password</label>
+                          <input type="text" className="form-control" name="subject" id="subject" placeholder="Enter your password" required />
+                        </div>
+                        <div className="my-3">
+                          <div className="loading">Loading</div>
+                          <div className="error-message" />
+                          <div className="sent-message">Your message has been sent. Thank you!</div>
+                        </div>
+                        <div className="form-group mt-3">
+                           <center><Link className="inputbutton" type="submit" aria-current="page" to={"/profile"}>Login</Link></center>
+                          {/* <button type="submit">Login</button> */}
+                        </div>
+                        <div className="form-group mt-3">
+                          <center><Link className="inputbutton" type="submit" aria-current="page" to={"/signup"}>Signup</Link></center><br /><br />
+                        </div>
+                      </form>
+                    </div>
+                    <div className="col-lg-3" />
                   </div>
-                  <div className="col-lg-4 mx-auto">
-                      {/* Right empty for spacing */}
-                  </div>
-              </div>
-          </div>
-      </section>
-  );
+                </div>
+              </section>
+            </main>
 
-
-
-
+        <Footer/>
+    </div>
+  )
 }
 
-export default Login;
+export default Login

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate ,Navigate} from 'react-router-dom';
 
-import Login from './components/User/Login';
+
 import Home from './components/User/Home';
 
 import AdminRoutes from './routes/AdminRoutes';
@@ -11,6 +11,15 @@ import Cart from './components/User/Cart'
 import Checkout from './components/User/Checkout';
 import Payment from './components/User/Payment';
 import Inventory from './components/User/Inventory';
+
+import About from './components/User/About';
+import Login from './components/User/Login';
+
+import Services from './components/User/Service';  
+import Blog from './components/User/Blog';
+import Signup from './components/User/Signup';
+
+import Profile from './components/User/Profile';
 
 
 import './App.css';
@@ -47,7 +56,6 @@ function App() {
       <Routes>
           {/* <Route path="/" element={isUserAuthenticated ? <Home /> : <Navigate to="/login" />} /> */}
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/admin/*" element={<AdminRoutes />} />
           <Route path="/register*" element={<Register />} />
           <Route path="/cart*" element={<Cart />} />
@@ -55,6 +63,13 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/payment" element={<Payment />} />
           <Route path="/inventory" element={<Inventory />} />
+
+          <Route path='/about' element ={<About/>} />
+        <Route path='/services' element ={<Services/>} />
+        <Route path='/blog' element ={<Blog/>} />
+        <Route path='/login' element ={<Login/>} />
+        <Route path='/signup' element ={<Signup/>} />
+        <Route path='/profile' element ={<Profile/>} />
                   
     </Routes>
     </div>

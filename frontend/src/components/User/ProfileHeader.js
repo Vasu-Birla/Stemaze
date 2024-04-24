@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Navbar() {
+function Navbarl() {
   return (
     <div>
       <header id="header" className="header d-flex align-items-center sticked">
@@ -11,14 +11,14 @@ function Navbar() {
           </a>
           <nav id="navbar" className="navbar">
             <ul>
-              <li><Link to={"/"}>Home</Link></li>
-              <li><Link to={"/about"}>About</Link></li>
-              <li><Link to={"/services"}>The App</Link></li>
-              <li><Link to={"/#consultancy"}>Consultancy</Link></li>
-              <li><Link to={"/#survey"}>Survey</Link></li>
-              <li><Link to={"/blog"}>Blog</Link></li>   
-              <li><Link to={"/#contact"}>Contact</Link></li>
-              <li><Link className="getstarted scrollto" to={"/login"}>Login/Signup</Link></li>
+              <li><span class="getstarted scrollto">Stemage</span></li>
+              <li><a class="scrollto" href="/profile"><i class="bi bi-bell dropdown-indicator"></i><span class="badge">3</span></a></li>
+              <li class="dropdown"><Link to={"/profile"}><i class="bi bi-gear dropdown-indicator"></i></Link>
+                <ul>
+                  <li><Link to={"/profile"}>Profile</Link></li>
+                  <li><Link to={"/login"}>Logout</Link></li>
+                </ul>
+              </li>
             </ul>
           </nav>
           <i className="mobile-nav-toggle mobile-nav-show bi bi-list" />
@@ -29,4 +29,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default Navbarl
