@@ -60,7 +60,7 @@ function Dashboard() {
   <div className="container position-relative">
     <div className="row gy-5" data-aos="fade-in" style={{ opacity: opacity }}>
       <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
-        <h2>Welcome to <span>Stemaze</span></h2>
+        <h2>Welcome to <span>Stemage</span></h2>
         <p>Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum quaerat.</p>
         <div className="d-flex justify-content-center justify-content-lg-start">
           <a href="#about" className="btn-get-started">Get Started</a>
