@@ -11,13 +11,13 @@ function Navbar() {
           </a>
           <nav id="navbar" className="navbar">
             <ul>
-              <li><Link to={"/"}>Home</Link></li>
+            <li><Link to={"/"}>Home</Link></li>
               <li><Link to={"/about"}>About</Link></li>
               <li><Link to={"/services"}>The App</Link></li>
-              <li><Link to={"/#consultancy"}>Consultancy</Link></li>
-              <li><Link to={"/#survey"}>Survey</Link></li>
+              <li><Link to={"/consultancy"}>Consultancy</Link></li>
+              <li><Link to={"/team"}>Survey</Link></li>
               <li><Link to={"/blog"}>Blog</Link></li>   
-              <li><Link to={"/#contact"}>Contact</Link></li>
+              <li><Link to={"/contact"}>Contact</Link></li>
               <li><Link className="getstarted scrollto" to={"/login"}>Login/Signup</Link></li>
             </ul>
           </nav>

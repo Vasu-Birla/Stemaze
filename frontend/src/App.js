@@ -13,7 +13,11 @@ import Payment from './components/User/Payment';
 import Inventory from './components/User/Inventory';
 
 import About from './components/User/About';
+import Consultancy from './components/User/Consultancy';
+import Team from './components/User/Team';
+import Contact from './components/User/Contact';
 import Login from './components/User/Login';
+import Createprofile from './components/User/Createprofile';
 
 import Services from './components/User/Service';  
 import Blog from './components/User/Blog';
@@ -54,7 +58,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-          {/* <Route path="/" element={isUserAuthenticated ? <Home /> : <Navigate to="/login" />} /> */}
+            {/* <Route path="/" element={isUserAuthenticated ? <Home /> : <Navigate to="/login" />} /> */}
           <Route path="/" element={<Home />} />
           <Route path="/admin/*" element={<AdminRoutes />} />
           <Route path="/register*" element={<Register />} />
@@ -65,9 +69,13 @@ function App() {
           <Route path="/inventory" element={<Inventory />} />
 
           <Route path='/about' element ={<About/>} />
+          <Route path='/consultancy' element ={<Consultancy/>} />
+          <Route path='/team' element ={<Team/>} />
+          <Route path='/contact' element ={<Contact/>} />
         <Route path='/services' element ={<Services/>} />
         <Route path='/blog' element ={<Blog/>} />
         <Route path='/login' element ={<Login/>} />
+        <Route path='/createprofile' element ={<Createprofile/>} />
         <Route path='/signup' element ={<Signup/>} />
         <Route path='/profile' element ={<Profile/>} />
                   

@@ -41,7 +41,7 @@ function Login() {
                           {/* <button type="submit">Login</button> */}
                         </div>
                         <div className="form-group mt-3">
-                          <center><Link className="inputbutton" type="submit" aria-current="page" to={"/signup"}>Signup</Link></center><br /><br />
+                          <center><Link className="inputbutton" type="submit" aria-current="page" to={"/createprofile"}>Signup</Link></center><br /><br />
                         </div>
                       </form>
                     </div>
