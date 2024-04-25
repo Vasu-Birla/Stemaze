@@ -1,58 +1,39 @@
-import React from 'react';
+import React from 'react'
+
+import { Link } from 'react-router-dom';
 import './Login.css';
 
+
 function Login() {
-    return (
-        <section id="login-page" className="login-page">
-            <div className="container-fluid">
-                <div className="row w-100 mx-0">
-                    <div className="col-lg-4 mx-auto">
-                        {/* Left empty for spacing */}
-                    </div>
-
-                    <div className="col-lg-4 mx-auto">
-                        <div className="auth-form-light text-left py-4 px-3 px-sm-4">
-                            <div className="brand-logo">
-                                <a href="index.html"> 
-                                    <img alt="image" src="https://cyberimpulses.com/Android/BoatAdmin/images/logo-text.png" className="header-logo" style={{ width: '50%' }} />
-                                </a>
-                            </div>
-                            <h4 className="login-title">Professional Profile</h4>
-                            <form className="pt-3">
-                                <div className="form-group">
-                                    <label>Email</label>
-                                    <input type="email" className="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username" />
-                                </div>
-                                <div className="form-group">
-                                    <label>Password</label>
-                                    <input type="password" className="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" />
-                                </div>
-
-                                <div className="my-3 d-flex justify-content-between align-items-center">
-                                    <div className="form-check">
-                                        <label className="form-check-label text-muted">
-                                            <input type="checkbox" className="form-check-input" />
-                                            Keep me signed in
-                                        </label>
-                                    </div>
-                                    <a href="#" className="auth-link text-black">Forgot password?</a>
-                                </div>
-                                <div className="mt-3">
-                                    <a className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="index.html">SIGN IN</a>
-                                </div>
-                                <div className="text-center mt-3 font-weight-bold">
-                                    Don't have an account? <a href="#">Create</a>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 mx-auto">
-                        {/* Right empty for spacing */}
-                    </div>
-                </div>
+  return (
+    <div className='home'>
+      <div>
+        <main className="form-signin w-100 m-auto">
+          {/* End Login */}
+          <form name="BetPlayer" method="post" encType="multipart/form-data">
+            <div className="my-4">
+              <h2>Admin Login</h2>
             </div>
-        </section>
-    );
+            <div className="form-floating">
+              <input type="text" className="form-control" id="floatingInput" placeholder="Username" name="username" required />
+              <label htmlFor="floatingInput">Username</label>
+            </div>
+            <div className="form-floating">
+              <input type="password" className="form-control" name="password" id="loginSection-password" placeholder="Password" required />
+              <label htmlFor="floatingPassword">Password</label>
+            </div>
+            <Link className="w-100 mt-3 btn btn-lg btn-secondary" type="submit" aria-current="page" to={"/admin/dashboard"}>login</Link>
+            {/* <input type="submit" id="login-btn" className="w-100 mt-3 btn btn-lg btn-secondary" name="login" defaultValue="Login" />  */}
+          </form>
+        </main>
+        <footer className="fixed-bottom text-center text-light">
+          <div className="bg-secondary p-2">
+            2024 © Copyright STEMAGE Consultency. All Rights Reserved Designed by <a href="#">CISS</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+  )
 }
 
-export default Login;
+export default Login

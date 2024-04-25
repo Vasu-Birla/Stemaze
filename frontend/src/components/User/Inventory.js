@@ -1,106 +1,88 @@
-import React, { useState, useEffect } from 'react';
-import Header from './Header'; // Import the Header component
-import Footer from './Footer'
+import React from 'react'
+import Navbar from './Navbar';
+import Footer from './Footer';
+import './Inventory.css';
 
-import './Inventory.css'; 
+function Inventory() {
+  return (
+    <div className='home sticked-header-offset'>
+        <Navbar/>
+   
 
-
-
-const Inventory = () => {
-
-    const [totalCartItems, setTotalCartItems] = useState(0);
-  const [cartItems, setCartItems] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-    // Image paths
-    const images = [
-      `${process.env.REACT_APP_API_HOST}/uploads/11.jpg`,
-      `${process.env.REACT_APP_API_HOST}/uploads/12.jpg`,
-      `${process.env.REACT_APP_API_HOST}/uploads/13.jpg`,
-      `${process.env.REACT_APP_API_HOST}/uploads/14.jpg`,
-      `${process.env.REACT_APP_API_HOST}/uploads/15.jpg`,
-      `${process.env.REACT_APP_API_HOST}/uploads/16.jpg`,
-      `${process.env.REACT_APP_API_HOST}/uploads/17.jpg`,
-      `${process.env.REACT_APP_API_HOST}/uploads/18.jpg`,
-    ];
-
-
-
-    useEffect(() => {
-        // Load cart items from localStorage on component mount
-        const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        setCartItems(storedCartItems);
-        setTotalCartItems(storedCartItems.length);
-    
-      }, []);
-
-
-
-    useEffect(() => {
-        // Update localStorage whenever cartItems change
-        localStorage.setItem('cartItems', JSON.stringify(cartItems));
-        setTotalCartItems(cartItems.length);
-      }, [cartItems]);
-  
-    return (
-
-        <div>
-
-<Header totalCartItems={totalCartItems} />
-        
-      <div className="inventory-container">
-
-
-        <div className="column">
-          {images.slice(0, 2).map((image, index) => (
-            <div className="image-preview" key={index}>
-              <img src={image} alt={`Image ${index + 11}`} />
-              <a href={image} download={`image-${index + 5}.jpg`} className="download-icon" />
+{/* ======= Our Team Section ======= */}
+<section id="team" className="team">
+  <div className="container" data-aos="fade-up">
+    <div className="section-header">
+      <h2>Inventory</h2>
+    </div>
+    <div className="row">
+      <div className="col-lg-6">
+        <div className="row">
+          <div className="col-xl-6 col-md-6 d-flex" data-aos="fade-up" data-aos-delay={100}>
+            <div className="member">
+              <img src="img/11.png" className="img-fluid" alt="" />
+              <div className="text-center envent"><i className="bi bi-download" /></div>
             </div>
-          ))}
-        </div>
-
-        <div className="column">
-          {images.slice(2, 4).map((image, index) => (
-            <div className="image-preview" key={index}>
-              <img src={image} alt={`Image ${index + 11}`} />
-              <a href={image} download={`image-${index + 5}.jpg`} className="download-icon" />
+          </div>
+          <div className="col-xl-6 col-md-6 d-flex" data-aos="fade-up" data-aos-delay={200}>
+            <div className="member">
+              <img src="img/12.png" className="img-fluid" alt="" />
+              <div className="text-center envent"><i className="bi bi-download" /></div>
             </div>
-          ))}
-        </div>
-
-
-
-        <div className="column">
-          {images.slice(4, 6).map((image, index) => (
-            <div className="image-preview" key={index}>
-              <img src={image} alt={`Image ${index + 15}`} />
-              <a href={image} download={`image-${index + 5}.jpg`} target="_blank" rel="noopener noreferrer"  className="download-icon" />
+          </div>
+          <br />
+          <div className="col-xl-6 col-md-6 d-flex" data-aos="fade-up" data-aos-delay={200}>
+            <div className="member">
+              <img src="img/13.png" className="img-fluid" alt="" />
+              <div className="text-center envent"><i className="bi bi-download" /></div>
             </div>
-          ))}
-        </div>
-
-
-        <div className="column">
-          {images.slice(6, 8).map((image, index) => (
-            <div className="image-preview" key={index}>
-              <img src={image} alt={`Image ${index + 15}`} />
-              <a href={image} download={`image-${index + 5}.jpg`} target="_blank" rel="noopener noreferrer"  className="download-icon" />
+          </div>{/* End Team Member */}
+          <div className="col-xl-6 col-md-6 d-flex" data-aos="fade-up" data-aos-delay={200}>
+            <div className="member">
+              <img src="img/14.png" className="img-fluid" alt="" />
+              <div className="text-center envent"><i className="bi bi-download" /></div>
             </div>
-          ))}
+          </div>{/* End Team Member */}
         </div>
-
-
-
       </div>
-
-      <br></br>
-
-<Footer/>
-
-
+      <div className="col-lg-6">
+        <div className="row">
+          <div className="col-xl-6 col-md-6 d-flex" data-aos="fade-up" data-aos-delay={300}>
+            <div className="member">
+              <img src="img/15.png" className="img-fluid" alt="" />
+              <div className="text-center envent"><i className="bi bi-download" /></div>
+            </div>
+          </div>{/* End Team Member */}
+          <div className="col-xl-6 col-md-6 d-flex" data-aos="fade-up" data-aos-delay={400}>
+            <div className="member">
+              <img src="img/16.png" className="img-fluid" alt="" />
+              <div className="text-center envent"><i className="bi bi-download" /></div>
+            </div>
+          </div><br /><br />{/* End Team Member */}
+          <br />
+          <div className="col-xl-6 col-md-6 d-flex" data-aos="fade-up" data-aos-delay={400}>
+            <div className="member">
+              <img src="img/17.png" className="img-fluid" alt="" />
+              <div className="text-center envent"><i className="bi bi-download" /></div>
+            </div>
+          </div>{/* End Team Member */}
+          <div className="col-xl-6 col-md-6 d-flex" data-aos="fade-up" data-aos-delay={400}>
+            <div className="member">
+              <img src="img/18.png" className="img-fluid" alt="" />
+              <div className="text-center envent"><i className="bi bi-download" /></div>
+            </div>
+          </div>{/* End Team Member */}
+        </div>
       </div>
-    );
-  };
-export default Inventory;
+    </div>
+  </div><br /><br />
+  <center><div className="col-lg-4"><button className="time">Need help to prepare your documents?</button></div></center>
+</section>{/* End Our Team Section */}
+
+
+        <Footer/>
+    </div>
+  )
+}
+
+export default Inventory

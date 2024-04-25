@@ -26,6 +26,9 @@ import Signup from './components/User/Signup';
 import Profile from './components/User/Profile';
 
 
+import Appointment from './components/User/Appointment';
+
+
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -78,6 +81,8 @@ function App() {
         <Route path='/createprofile' element ={<Createprofile/>} />
         <Route path='/signup' element ={<Signup/>} />
         <Route path='/profile' element ={<Profile/>} />
+    
+        <Route path='/appointment' element ={<Appointment/>} />
                   
     </Routes>
     </div>

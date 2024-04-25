@@ -4,6 +4,8 @@ import Footer from './Footer';
 import '../../assets/css/main.css';
 import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
+import { Link } from 'react-router-dom';
+
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -230,6 +232,15 @@ function Dashboard() {
     </div>
   </div>
 </section>{/* End Our Services Section */}
+
+
+
+<section className="about">
+  <div className="container" data-aos="fade-up">
+    <img src="img/inventory1.png" className="img-fluid rounded-4" alt />
+    <div className="text-center"><Link className="envent" type="submit" aria-current="page" to={"/inventory"}>Visit our Inventory</Link></div>
+  </div>
+</section>
 
   {/* ======= Testimonials Section ======= */}
   <section id="testimonials" className="testimonials">

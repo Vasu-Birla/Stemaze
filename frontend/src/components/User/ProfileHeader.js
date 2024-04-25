@@ -16,6 +16,7 @@ function Navbarl() {
               <li class="dropdown"><Link to={"/profile"}><i class="bi bi-gear dropdown-indicator"></i></Link>
                 <ul>
                   <li><Link to={"/profile"}>Profile</Link></li>
+                  <li><Link to={"/appointment"}>Appointment</Link></li>
                   <li><Link to={"/login"}>Logout</Link></li>
                 </ul>
               </li>
